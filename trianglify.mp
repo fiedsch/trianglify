@@ -14,6 +14,11 @@ outputtemplate := "%j-%c.mps";
 % outputtemplate := "%j-%c.svg";
 % outputformat := "svg";
 
+% generate PNG
+
+% outputtemplate := "%j-%c.png";
+% outputformat := "png";
+
 % Setup rows and columns of the image's grid
 
 rows=30;
