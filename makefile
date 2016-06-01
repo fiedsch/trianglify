@@ -4,3 +4,4 @@
 trianglify-1.pdf: trianglify.mp
 	mpost trianglify.mp
 	epstopdf trianglify-1.mps
+	epstopdf trianglify-2.mps
