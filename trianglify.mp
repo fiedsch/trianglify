@@ -30,7 +30,7 @@ u=1cm;
 
 % randomize results (set to 0 while debugging)
 
-poistiondistortion=.20u;
+postiondistortion=.20u;
 colordistortion=0.025;
 
 
@@ -78,7 +78,7 @@ def setpoints =
   for i=0 upto rows:
     for j=0 upto cols:
       points[i][j] := (j*u,-i*u)
-        shifted (normaldeviate*poistiondistortion,normaldeviate*poistiondistortion);
+        shifted (normaldeviate*postiondistortion,normaldeviate*postiondistortion);
     endfor;
   endfor;
 enddef;
@@ -113,19 +113,18 @@ enddef;
 
 def drawpicture =
   pickup pencircle scaled linewidth;
-  for i=0 upto rows:
-    for j=0 upto cols:
-      if (j<cols) and (i<rows):
+  for i=0 upto rows-1:
+    for j=0 upto cols-1:
         drawpart(i,j);
-      fi;
     endfor;
   endfor;
 enddef;
 
+
 beginfig(1);
   % debug: no distortion
-  save poistiondistortion, colordistortion;
-  poistiondistortion:=colordistortion:=0;
+  save postiondistortion, colordistortion;
+  postiondistortion:=colordistortion:=0;
   setpoints;
   drawpicture;
 endfig;
@@ -136,4 +135,5 @@ beginfig(2);
 endfig;
 
 end
+
 %% EOF %%
